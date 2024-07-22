@@ -1,0 +1,99 @@
+# Documentation Technique de l'Application
+
+## 1. Réflexions Initiales Technologiques sur le Sujet
+
+### Choix Technologiques
+Pour développer une application web robuste et performante, nous avons choisi les technologies suivantes :
+- **HTML/CSS** : Pour la structure et le style de l'application.
+- **JavaScript** : Pour l'interactivité sur le côté client.
+- **PHP** : Pour la logique côté serveur et l'intégration avec la base de données.
+- **MySQL** : Pour le stockage des données.
+- **Bootstrap** : Pour un design réactif et moderne.
+- **Git** : Pour le contrôle de version.
+- **Docker** : Pour l'environnement de déploiement.
+
+### Raisons du Choix
+- **HTML/CSS/JavaScript** : Standards de l'industrie pour le développement web.
+- **PHP** : Large communauté, facile à apprendre et à déployer.
+- **MySQL** : Base de données relationnelle robuste et largement utilisée.
+- **Bootstrap** : Facilite la création de designs réactifs.
+- **Git** : Outil de contrôle de version indispensable pour collaborer efficacement.
+- **Docker** : Assure la cohérence de l'environnement de développement et de production.
+
+## 2. Configuration de Votre Environnement de Travail
+
+### Prérequis
+- **Node.js** et **npm** : Pour la gestion des paquets JavaScript.
+- **PHP** : Pour l'exécution du code côté serveur.
+- **MySQL** : Pour la gestion de la base de données.
+- **Composer** : Pour la gestion des dépendances PHP.
+- **Docker** : Pour la création d'environnements isolés.
+
+### Étapes de Configuration
+1. **Installer Node.js et npm** :
+   ```bash
+   sudo apt-get install nodejs npm
+
+### Modèle Conceptuel de Données (Diagramme de Classe)
+
++--------------------+       +----------------------+
+| Habitat            |       | Animal               |
++--------------------+       +----------------------+
+| - id : int         |<----->| - id : int           |
+| - name : string    | 1   n | - name : string      |
+| - description :    |       | - species : string   |
+|   string           |       | - habitat_id : int   |
+| - image : string   |       | - image : string     |
++--------------------+       +----------------------+
+                              
++--------------------------+
+| VeterinarianVisit        |
++--------------------------+
+| - id : int               |
+| - animal_id : int        |
+| - date : datetime        |
+| - health_status : string |
+| - food : string          |
+| - quantity : int         |
+| - details : string       |
++--------------------------+
+
+
+Diagramme d’Utilisation et Diagramme de Séquence
+
+    +--------------------+
+    |      Utilisateur   |
+    +--------------------+
+             |
+             v
+    +--------------------+
+    | Consulter Habitats |
+    +--------------------+
+             |
+             v
+    +--------------------+
+    | Consulter Animaux  |
+    +--------------------+
+             |
+             v
+    +--------------------+
+    | Consulter Détails  |
+    |   Vétérinaire      |
+    +--------------------+
+
+--------------------------------------------------------
+
+Utilisateur         Serveur            Base de Données
+    |                   |                      |
+    |--- Requête Page Habitats ------------->  |
+    |                   |                      |
+    |<-- Réponse Habitats avec Animaux ------  |
+    |                   |                      |
+    |--- Requête Détails Vétérinaire ------>   |
+    |                   |                      |
+    |                   |--- Query SQL ----->  |
+    |                   |<-- Résultat SQL ---  |
+    |<-- Réponse Détails Vétérinaire ------    |
+    |                   |                      |
+
+
