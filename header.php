@@ -24,6 +24,7 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'home';
                 <li><a href="index.php?page=habitats">Nos Habitats</a></li>
                 <li><a href="index.php?page=avis">Avis des Visiteurs</a></li>
                 <li><a href="pro_login.php">Espace Pro</a></li>
+                <li><a href="content/login.php">Connexion</a></li>
                 <li><a href="content/logout.php">Déconnexion</a></li>
             </ul>
         </nav>
